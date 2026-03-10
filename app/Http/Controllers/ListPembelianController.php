@@ -15,14 +15,14 @@ class ListPembelianController extends Controller
         
         // Data cashflow untuk grafik
         $rawCashflow = Tabungan::selectRaw('
-            MONTH(created_at) as bulan,
-            SUM(CASE WHEN type = "simpan" THEN jumlah ELSE 0 END) as pemasukan,
-            SUM(CASE WHEN type = "ambil" THEN jumlah ELSE 0 END) as pengeluaran
-        ')
-        ->whereYear('created_at', date('Y'))
-        ->groupBy('bulan')
-        ->get()
-        ->keyBy('bulan');
+    EXTRACT(MONTH FROM created_at) as bulan,
+    SUM(CASE WHEN type = \'simpan\' THEN jumlah ELSE 0 END) as pemasukan,
+    SUM(CASE WHEN type = \'ambil\' THEN jumlah ELSE 0 END) as pengeluaran
+')
+->whereYear('created_at', date('Y'))
+->groupBy('bulan')
+->get()
+->keyBy('bulan');
 
         // Siapkan data 12 bulan
         $namaBulan = ['Jan', 'Feb', 'Mar', 'Apr', 'Mei', 'Jun', 'Jul', 'Agu', 'Sep', 'Okt', 'Nov', 'Des'];
