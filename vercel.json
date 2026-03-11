@@ -3,11 +3,10 @@
   "buildCommand": "npm install --include=dev && node node_modules/vite/bin/vite.js build",
   "functions": {
     "api/index.php": {
-      "runtime": "vercel-php@0.6.0"
+      "runtime": "vercel-php@0.7.0"
     }
   },
   "routes": [
-    { "src": "/build/(.*)", "dest": "/public/build/$1" },
     { "src": "/(.*)", "dest": "api/index.php" }
   ]
 }
