@@ -1,17 +1,37 @@
-# tabunganku
+# 💰 TabunganKu - Aplikasi Pencatatan Keuangan Pribadi
 
-A new Flutter project.
+**TabunganKu** adalah aplikasi Flutter modern yang dirancang untuk membantu pengguna mengelola tabungan mereka di berbagai tempat penyimpanan (Dompet, Celengan, GoPay) secara terorganisir dan aman.
 
-## Getting Started
+## 🚀 Fitur Utama
+- **Sistem Autentikasi**: Login dan Register menggunakan **Supabase Auth**.
+- **Data Per-User (Secure)**: Menggunakan *Row Level Security* (RLS) agar data antar pengguna tidak bercampur.
+- **Multi-Lokasi Saldo**: Pisahkan catatan uang Anda di Dompet, Celengan, atau saldo Digital (GoPay).
+- **Transfer Antar Saldo**: Fitur untuk memindahkan saldo dari satu lokasi ke lokasi lain.
+- **Template Cepat**: Simpan nominal transaksi yang sering digunakan untuk input lebih cepat.
+- **Riwayat Lengkap**: Cari dan filter riwayat transaksi berdasarkan lokasi atau keterangan.
+- **Modern UI**: Menggunakan Material 3 dengan skema warna yang bersih dan interaktif.
+- **Home Widget**: Pantau saldo langsung dari layar utama HP Anda (Android).
 
-This project is a starting point for a Flutter application.
+## 🛠️ Teknologi yang Digunakan
+- **Framework**: [Flutter](https://flutter.dev)
+- **Backend**: [Supabase](https://supabase.com/) (Auth & Database)
+- **State Management**: [Provider](https://pub.dev/packages/provider)
+- **Local Integration**: [Home Widget](https://pub.dev/packages/home_widget) untuk integrasi widget Android.
+- **Format Data**: `intl` untuk format mata uang Rupiah.
 
-A few resources to get you started if this is your first Flutter project:
+## 📁 Struktur Folder
+```text
+lib/
+├── core/               # Konfigurasi (Supabase, Constants)
+├── models/             # Model data (Tabungan, Template)
+├── pages/              # Halaman fitur baru (Auth, Splash)
+├── providers/          # Pengelola status (Auth Provider)
+├── services/           # Logika API & Service Supabase
+├── views/              # Halaman utama & Widget UI
+│   ├── pages/          # Home, History
+│   └── widgets/        # Komponen UI (BalanceCard, LokasiCard)
+└── main.dart           # Entry point aplikasi
+```
 
-- [Learn Flutter](https://docs.flutter.dev/get-started/learn-flutter)
-- [Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Flutter learning resources](https://docs.flutter.dev/reference/learning-resources)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## 📈 Versi Saat Ini
+**V 1.0.2.0**
